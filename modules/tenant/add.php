@@ -12,6 +12,8 @@ layout('breadcrumb', 'admin', $data);
 $allRoom = getRaw("SELECT id, tenphong, soluong FROM room ORDER BY tenphong");
 $allCCCD = getRaw("SELECT cmnd FROM tenant");
 
+$currentMonthYear = date('Y-m-d');
+
 // Xử lý thêm người dùng
 if (isPost()) {
     // Validate form
@@ -33,6 +35,10 @@ if (isPost()) {
 
     if (empty(trim($body['ngaysinh']))) {
         $errors['ngaysinh']['required'] = '** Bạn chưa chọn ngày sinh!';
+    } else {
+        if($body['ngaysinh'] >= $currentMonthYear) {
+            $errors['ngaysinh']['date'] = '** Nay mới sinh ra mà đã đi thuê trọ rồi!';
+        }
     }
 
     if (empty(trim($body['room_id']))) {
@@ -63,6 +69,7 @@ if (isPost()) {
             'diachi' => $body['diachi'],
             'nghenghiep' => $body['nghenghiep'],
             'cmnd' => $body['cmnd'],
+            'ngayvao' => $body['ngayvao'],
             'ngaycap' => $body['ngaycap'],
             'anhmattruoc' => $body['anhmattruoc'],
             'anhmatsau' => $body['anhmatsau'],
@@ -166,7 +173,7 @@ layout('navbar', 'admin', $data);
                             <input type="text" placeholder="Ảnh mặt trước" name="anhmattruoc" id="name" class="form-control image-render" value="<?php echo old('anhmattruoc', $old); ?>">   
                         </div>
                         <div class="col-1">
-                            <button type="button" class="btn btn-warning choose-image"><i class="fa fa-upload"></i></button>
+                            <button type="button" class="btn btn-secondary choose-image"><i class="fa fa-upload"></i></button>
                         </div>
                     </div>
                 </div>
@@ -178,7 +185,7 @@ layout('navbar', 'admin', $data);
                             <input type="text" placeholder="Ảnh mặt sau" name="anhmatsau" id="name" class="form-control image-render" value="<?php echo old('anhmatsau', $old); ?>">   
                         </div>
                         <div class="col-1">
-                            <button type="button" class="btn btn-warning choose-image"><i class="fa fa-upload"></i></button>
+                            <button type="button" class="btn btn-secondary choose-image"><i class="fa fa-upload"></i></button>
                         </div>
                     </div>
                 </div>
@@ -190,9 +197,11 @@ layout('navbar', 'admin', $data);
                         <?php
                         if (!empty($allRoom)):
                             foreach ($allRoom as $item):
-                        ?>
-                        <option value="<?php echo $item['id']; ?>" <?php echo (old('room_id', $old) == $item['id']) ? 'selected' : false; ?>><?php echo $item['tenphong']; ?></option>
-                        <?php
+                                if($item['soluong'] < 2) {                                 
+                                    ?>
+                                        <option value="<?php echo $item['id']; ?>" <?php echo (old('room_id', $old) == $item['id']) ? 'selected' : false; ?>><?php echo $item['tenphong']; ?></option>
+                                    <?php
+                                }
                             endforeach;
                         endif;
                         ?>
@@ -201,9 +210,15 @@ layout('navbar', 'admin', $data);
                 </div>
             </div>
 
+                <div class="form-group">
+                    <label for="">Ngày vào ở <span style="color: red">*</span></label>
+                    <input type="date" name="ngayvao" id="" class="form-control" value="<?php echo old('ngayvao', $old); ?>">
+                    <?php echo form_error('ngayvao', $errors, '<span class="error">', '</span>'); ?>
+                </div>
+
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Thêm khách</button>
-                <a href="<?php echo getLinkAdmin('tenant', 'lists'); ?>" class="btn btn-success">Quay lại</a>
+            <a href="<?php echo getLinkAdmin('tenant', 'lists'); ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Thêm khách</button>
             </div>
         </form>
     </div>

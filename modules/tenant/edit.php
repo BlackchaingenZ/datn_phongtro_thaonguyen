@@ -48,6 +48,9 @@ if(isPost()) {
   
    // Kiểm tra mảng error
   if(empty($errors)) {
+    // Trường hợp không chọn phòng
+    $room_id = !empty($body['room_id']) ? $body['room_id'] : NULL;
+
     // không có lỗi nào
     $dataUpdate = [
         'tenkhach' => $body['tenkhach'],
@@ -58,10 +61,11 @@ if(isPost()) {
         'nghenghiep' => $body['nghenghiep'],
         'cmnd' => $body['cmnd'],
         'ngaycap' => $body['ngaycap'],
+        'ngayvao' => $body['ngayvao'],
         'anhmattruoc' => $body['anhmattruoc'],
         'anhmatsau' => $body['anhmatsau'],
         'zalo' => $body['zalo'],
-        'room_id' => $body['room_id'],
+        'room_id' => $room_id,
     ];
 
     $condition = "id=$id";
@@ -165,7 +169,7 @@ layout('navbar', 'admin', $data);
                                     <input type="text" placeholder="Ảnh mặt trước" name="anhmattruoc" id="name" class="form-control image-render" value="<?php echo old('anhmattruoc', $old); ?>">   
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" class="btn btn-warning choose-image"><i class="fa fa-upload"></i></button>
+                                    <button type="button" class="btn btn-secondary choose-image"><i class="fa fa-upload"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +181,7 @@ layout('navbar', 'admin', $data);
                                     <input type="text" placeholder="Ảnh mặt sau" name="anhmatsau" id="name" class="form-control image-render" value="<?php echo old('anhmatsau', $old); ?>">   
                                 </div>
                                 <div class="col-1">
-                                    <button type="button" class="btn btn-warning choose-image"><i class="fa fa-upload"></i></button>
+                                    <button type="button" class="btn btn-secondary choose-image"><i class="fa fa-upload"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -203,12 +207,18 @@ layout('navbar', 'admin', $data);
                                 ?>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                    <label for="">Ngày vào ở <span style="color: red">*</span></label>
+                    <input type="date" name="ngayvao" id="" class="form-control" value="<?php echo old('ngayvao', $old); ?>">
+                    <?php echo form_error('ngayvao', $errors, '<span class="error">', '</span>'); ?>
+                </div>
                     
                     </div>                  
                     <div class="from-group">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Cập nhật</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('tenant') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('tenant') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i></a>
+                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-plus"></i> Cập nhật</button>
                             </div>
                     </div>
             </form>

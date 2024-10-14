@@ -98,7 +98,7 @@ function get($table, $field='*', $condition=''){
     return getRaw($sql);
 }
 
-function first($table, $field='*', $condtion=''){
+function first($table, $field='*', $condition=''){
     $sql = 'SELECT '.$field.' FROM '.$table;
     if (!empty($condition)){
         $sql.=' WHERE '.$condition;

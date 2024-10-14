@@ -4,7 +4,7 @@ if(!isLogin()) {
 } 
 
 $data = [
-    'pageTitle' => 'Tổng quan'
+    'pageTitle' => 'Màn hình chính'
 ];
 
 $userId = isLogin()['user_id'];
@@ -40,7 +40,7 @@ if($userDetail['group_id'] == 7) {
                     <div class="total-room">
                         <div class="content-left-title">
                             <div class="content-left-icon">
-                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/content-left-icon.svg" alt="">
+                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/home1.svg" alt="">
                             </div>
                             <p class="total-desc">Tổng số phòng</p>
                         </div>
@@ -52,7 +52,7 @@ if($userDetail['group_id'] == 7) {
                         <div class="child-one">
                             <div class="content-left-title">
                                 <div class="content-left-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số phòng đang cho thuê</p>
                             </div>
@@ -60,13 +60,14 @@ if($userDetail['group_id'] == 7) {
                             <?php $ratio1 = ($totalRoomThue / $totalRoom) * 100; ?>
                             <?php $ratio1 = number_format($ratio1, 2) ?>
                             <p class="total-count"><?php echo $totalRoomThue ?> <span style="font-size: 16px">(<?php echo $ratio1 ?>%)</span></p>
-                            <a href=""><div class="dashboard-link"></div></a>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
+                            
                         </div>
 
                         <div class="child-two">
                             <div class="content-left-title">
                                 <div class="content-left-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số phòng đang trống</p>
                             </div>
@@ -74,7 +75,7 @@ if($userDetail['group_id'] == 7) {
                             <?php $ratio2 = ($totalRoomTrong / $totalRoom) * 100; ?>
                             <?php $ratio2 = number_format($ratio2, 2) ?>
                             <p class="total-count"><?php echo $totalRoomTrong ?> <span style="font-size: 16px">(<?php echo $ratio2 ?>%)</span></p>
-                            <div class="dashboard-link"><a href=""></a></div>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
                         </div>
 
                     </div>
@@ -84,7 +85,7 @@ if($userDetail['group_id'] == 7) {
                         <div class="child-three">
                             <div class="content-left-title">
                                 <div class="content-left-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số phòng đang trong hạn hợp đồng</p>
                             </div>
@@ -93,13 +94,13 @@ if($userDetail['group_id'] == 7) {
                             <?php $ratioContract1 = ($contractPass / $contractTotal) * 100; ?>
                             <?php $ratioContract1 = number_format($ratioContract1, 2) ?>
                             <p class="total-count"><?php echo $contractPass ?> <span style="font-size: 16px">(<?php echo $ratioContract1 ?>%)</span></p>
-                            <a href=""><div class="dashboard-link"></div></a>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
                         </div>
 
                         <div class="child-four">
                             <div class="content-left-title">
                                 <div class="content-left-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số phòng đã hết hạn hợp đồng</p>
                             </div>
@@ -107,7 +108,7 @@ if($userDetail['group_id'] == 7) {
                             <?php $ratioContract2 = ($contractFail / $contractTotal) * 100; ?>
                             <?php $ratioContract2 = number_format($ratioContract2, 2) ?>
                             <p class="total-count"><?php echo $contractFail ?> <span style="font-size: 16px">(<?php echo $ratioContract2 ?>%)</span></p>
-                            <div class="dashboard-link"><a href=""></a></div>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
                         </div>
 
                     </div>
@@ -118,19 +119,19 @@ if($userDetail['group_id'] == 7) {
                         <div class="child-five">
                             <div class="content-left-title">
                                 <div class="content-left-icon background-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số khách thuê</p>
-                            </div>
+                            </div>                           
                             <?php $toTalTenant = getRows("SELECT id FROM tenant"); ?>
                             <p class="total-count"><?php echo $toTalTenant ?></p>
-                            <a href=""><div class="dashboard-link"></div></a>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
                         </div>
 
                         <div class="child-six">
                             <div class="content-left-title">
                                 <div class="content-left-icon background-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <?php
                                     $listAllcontract = getRaw("SELECT *, contract.id, tenphong, tenkhach, giathue, tiencoc, contract.ngayvao as ngayvaoo, contract.ngayra as thoihanhopdong, zalo FROM contract 
@@ -158,14 +159,15 @@ if($userDetail['group_id'] == 7) {
                                 $ratio3 = ($countContract / $contractTotal) * 100; 
                                 $ratio3 = number_format($ratio3, 2);
                             ?>
-                            <p class="total-count"><?php echo $countContract; ?><span style="font-size: 16px">(<?php echo $ratio3 ?>%)</span></p>
-                            <a href=""><div class="dashboard-link"></div></a>
+                            <p class="total-count"><?php echo $countContract; ?><span style="font-size: 16px">(<?php echo $ratio3 ?>%) </span> </p>
+                            <!--<a href=""><div class="dashboard-link"></div></a>-->
+                            
                         </div>
 
                         <div class="child-seven">
                             <div class="content-left-title">
                                 <div class="content-left-icon background-icon">
-                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/st.svg" alt="">
+                                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tasks.svg" alt="">
                                 </div>
                                 <p class="total-desc">Tổng số người dùng hệ thống</p>
                             </div>
@@ -183,9 +185,9 @@ if($userDetail['group_id'] == 7) {
         $billNear = firstRaw("SELECT * FROM bill WHERE room_id = $roomId ORDER BY create_at DESC LIMIT 1");
         $id = $billNear['id'];  
         $date = firstRaw("SELECT MONTH(create_at) AS month, YEAR(create_at) AS year FROM bill WHERE id=$id");
-        $tenantId = $billNear['tenant_id'];
+        // $tenantId = $billNear['tenant_id'];
     
-        $tenantDetail = firstRaw("SELECT * FROM tenant WHERE id = $tenantId");
+        // $tenantDetail = firstRaw("SELECT * FROM tenant WHERE id = $tenantId");
         $roomtDetail = firstRaw("SELECT * FROM room WHERE id = $roomId");
         $msg =getFlashData('msg');
         $msgType = getFlashData('msg_type');
@@ -199,8 +201,8 @@ if($userDetail['group_id'] == 7) {
         <p style="font-size: 14px;">Địa chỉ: 597 - Nguyễn Bỉnh Khiêm, Đằng Lâm, Hải An, Hải Phòng</p>
         <p>Mã hóa đơn: <b style="color: red; font-size: 18px"><?php echo $billNear['mahoadon'] ?></b></p>
         <div class="rowOne" style="display: flex; justify-content: space-around;">
-            <p style="font-size: 14px; margin: 0;">Kính gửi: <b><?php echo $tenantDetail['tenkhach'] ?></b></p>
-            <p style="font-size: 14px; margin: 0">Số điện thoại: <b>0<?php echo $tenantDetail['sdt'] ?></b></p>
+            <!-- <p style="font-size: 14px; margin: 0;">Kính gửi: <b><?php echo $tenantDetail['tenkhach'] ?></b></p>
+            <p style="font-size: 14px; margin: 0">Số điện thoại: <b>0<?php echo $tenantDetail['sdt'] ?></b></p> -->
         </div>
         <div class="rowTwo" style="display: flex; justify-content: space-around; margin-top: 10px;">
             <p style="font-size: 14px;">Đơn vị: <b><?php echo $roomtDetail['tenphong'] ?></b></b></p>
@@ -241,13 +243,23 @@ if($userDetail['group_id'] == 7) {
                 <td style="font-size: 16px;"><b><?php echo number_format($billNear['tienmang'], 0, ',', '.') ?> đ</b></td>
             </tr>
             <tr>
-                <td style="font-size: 14px;"><b>Nợ cũ</b></td>
+                <td style="font-size: 14px;"><b>Cộng thêm</b></td>
                 <td><b><?php echo number_format($billNear['nocu'], 0, ',', '.') ?> đ</b></td>
                 <td style="font-size: 16px;"><b><?php echo number_format($billNear['nocu'], 0, ',', '.') ?> đ</b></td>
             </tr>
             <tr>
                 <td style="font-size: 14px;"><b>Tổng tiền</b></td>
                 <td colspan="2" style="text-align: right; font-size: 18px; color: #dc3545;"><b><?php echo number_format($billNear['tongtien'], 0, ',', '.') ?> đ</b></td>
+            </tr>
+
+            <tr style="background: #4caf5021">
+                <td style="font-size: 14px;"><b>Đã thu</b></td>
+                <td colspan="2" style="text-align: right; font-size: 18px; color: #258e0c;"><b><?php echo number_format($billNear['sotiendatra'], 0, ',', '.') ?> đ</b></td>
+            </tr>
+
+            <tr>
+                <td style="font-size: 14px;"><b>Còn lại</b></td>
+                <td colspan="2" style="text-align: right; font-size: 18px; color: #dc3545;"><b><?php echo number_format($billNear['sotienconthieu'], 0, ',', '.') ?> đ</b></td>
             </tr>
             <tr>
                 <td style="font-size: 14px;"><b>Thanh toán</b></td>

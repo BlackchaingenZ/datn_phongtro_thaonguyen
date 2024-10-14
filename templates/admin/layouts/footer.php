@@ -1,6 +1,6 @@
 </div>
 <footer class="main-footer">
-   Copyright &copy;  <strong>Quản lý nhà trọ cho thuê. </strong>
+   Mọi ý kiến đóng góp vui lòng gửi về địa chỉ Email:  <strong>phongtrothaonguyen@gmail.com </strong>
 </footer>
 
   <!-- Control Sidebar -->

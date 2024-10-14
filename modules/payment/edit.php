@@ -161,8 +161,8 @@ layout('navbar', 'admin', $data);
                     </div>                  
                     <div class="from-group">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Cập nhật phiếu thu</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('payment') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('payment') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Cập nhật phiếu thu</button>
                             </div>
                     </div>
                 </form>

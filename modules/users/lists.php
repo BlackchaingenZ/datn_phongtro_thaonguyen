@@ -10,7 +10,7 @@ $data = [
 layout('header', 'admin', $data);
 layout('breadcrumb', 'admin', $data);
 
-$allGroups = getRaw("SELECT id, name FROM groups ORDER BY id");
+$allGroups = getRaw("SELECT id, name FROM `groups` ORDER BY id");
 
 // Xử lý lọc dữ liệu
 $filter = '';
@@ -82,7 +82,7 @@ if(!empty(getBody()['page'])) {
 $offset = ($page - 1) * $perPage;
 $listAllUser = getRaw("SELECT users.*, groups.name, room.tenphong 
 FROM users 
-LEFT JOIN groups ON users.group_id = groups.id 
+LEFT JOIN `groups` ON users.group_id = groups.id 
 LEFT JOIN room ON users.room_id = room.id 
 $filter LIMIT $offset, $perPage");
 
@@ -165,7 +165,7 @@ layout('navbar', 'admin', $data);
                     <input type="search" style="height: 50px" name="keyword" class="form-control" placeholder="Nhập tên người dùng" value="<?php echo (!empty($keyword))? $keyword:false; ?>">
             </div>
             <div class="col">
-                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
             </div>
 
             </div>
@@ -176,9 +176,9 @@ layout('navbar', 'admin', $data);
     <div>
   
 </div>
-            <a href="<?php echo getLinkAdmin('users', 'add') ?>" class="btn btn-success" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="<?php echo getLinkAdmin('users', 'add') ?>" class="btn btn-secondary" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
             <a href="<?php echo getLinkAdmin('users', 'lists'); ?>" class="btn btn-secondary"><i class="fa fa-history"></i> Refresh</a>
-            <button type="submit" name="deleteMultip" value="Delete" onclick="return confirm('Bạn có chắn chắn muốn xóa không ?')" class="btn btn-danger"><i class="fa fa-trash"></i> Xóa</button>
+            <button type="submit" name="deleteMultip" value="Delete" onclick="return confirm('Bạn có chắn chắn muốn xóa không ?')" class="btn btn-secondary"><i class="fa fa-trash"></i> Xóa</button>
 
             <table class="table table-bordered mt-3" id="dataTable">
                 <thead>
@@ -212,7 +212,7 @@ layout('navbar', 'admin', $data);
                                 
                         <td>
                             <div class="tenant_avt">
-                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/tenant_avt.svg" class="image__room-img" alt="">
+                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/users.svg" class="image__room-img" alt="">
                             </div>
                         </td>
                         <td><b><?php echo $item['fullname']; ?></b></td>
@@ -223,7 +223,7 @@ layout('navbar', 'admin', $data);
                         <td style="text-align: center"><?php echo $item['status'] == 0 ? '<span class="btn-kyhopdong-err">Chưa kích hoạt</span>' : '<span class="btn-kyhopdong-suc">Đã kích hoạt</span>' ?></td>
 
                         <td class="">
-                            <a href="<?php echo getLinkAdmin('users','edit',['id' => $item['id']]); ?>" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> </a>
+                            <a href="<?php echo getLinkAdmin('users','edit',['id' => $item['id']]); ?>" class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i> </a>
                             <a href="<?php echo getLinkAdmin('users','delete',['id' => $item['id']]); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')"><i class="fa fa-trash"></i> </a>
                         </td>                
                          

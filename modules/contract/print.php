@@ -50,24 +50,24 @@ $html = '
             <b style="font-size: 12pt;">Độc lập - Tự do - Hạnh phúc</b>
         </p>
         
-         <p><strong style="text-transform:uppercase; text-align: center">HỢP ĐỒNG CHO THUÊ PHÒNG TRỌ</strong></p>
+         <p><strong style="text-transform:uppercase; text-align: center">HỢP ĐỒNG CHO THUÊ PHÒNG TRỌ THẢO NGUYÊN</strong></p>
 
         <div style="text-align: left;font-size: 12pt;">
          <p><strong>BÊN A : BÊN CHO THUÊ (PHÒNG TRỌ)</strong></p>
                     <table style="width: 100%">
                         <tbody><tr>
                             <td colspan="2">
-                                <p>Họ và tên: Nguyễn Ngọc Chiến</p>
+                                <p>Họ và tên: Nguyễn Minh Thảo</p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2"> 
-                                <p>Năm sinh: 20/09/1975</p>
+                                <p>Năm sinh: 23/9/1972</p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>CMND/CCCD: 021567845982</p>
+                                <p>CMND/CCCD: 012020100322</p>
                             </td>
                         </tr>
                         <tr>
@@ -80,7 +80,7 @@ $html = '
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>Thường trú: 597 - Nguyễn Bình Khiêm - Hải An - Hải Phòng</p>
+                                <p>Thường trú: 56 Nam Pháp 1 Ngô Quyền,Hải Phòng</p>
                             </td>
                         </tr>
                     </tbody></table>
@@ -125,14 +125,14 @@ $html = '
         <div style="text-align: left;font-size: 12pt;">
           <p><strong>Điều 1:</strong></p>
                     <ul style="list-style-type: circle;">
-                        <li> <span>Bên A đồng ý cho bên B thuê một phòng trọ thuộc địa chỉ: 597 - Nguyễn Bỉnh Khiêm, Đằng Lâm, Hải An, Hải Phòng </span></li>
+                        <li><span>Bên A đồng ý cho bên B thuê một phòng trọ thuộc địa chỉ: 56 Nam Pháp 1 Ngô Quyền,Hải Phòng </span></li>
                         <li><span>Thời hạn thuê phòng trọ là kể từ ngày '.$contractDetail['ngayvao'].' đến '.$contractDetail['ngayra'].'  </span></li>
                     </ul>
                     <p><strong>Điều 2:</strong></p>
                     <ul style="list-style-type: circle;">
                         <li><span>Giá tiền thuê phòng trọ là ' . number_format($roomtDetail['giathue'], 0, ',', '.') . ' đ (Bằng chữ: Một triệu năm trăm ngàn đồng)</span></li>
                         <li><span>Tiền thuê phòng trọ bên B thanh toán cho bên A từ ngày 30  dương lịch hàng tháng.</span></li>
-                        <li><span>Bên B đặt tiền thế chân trước ' . number_format($roomtDetail['tiencoc'], 0, ',', '.') . ' đ (Bằng chữ : Một triệu năm trăm ngàn đồng) cho bên A. Tiền thế chân sẽ được trả
+                        <li><span>Bên B đặt tiền thế chân trước ' . number_format($roomtDetail['tiencoc'], 0, ',', '.') . ' đ (Bằng chữ : Bảy trăm ngàn đồng) cho bên A. Tiền thế chân sẽ được trả
                         </span></li><li><span>Bên B ngưng hợp đồng trước thời hạn thì phải chịu mất tiền thế chân.</span></li>
                         <li><span>Bên A ngưng hợp đồng (lấy lại phòng trọ) trước thời hạn thì bồi thường gấp đôi số tiền bên B đã thế chân.</span></li>
                     </ul>

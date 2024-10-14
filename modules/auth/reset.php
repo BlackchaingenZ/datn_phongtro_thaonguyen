@@ -21,7 +21,7 @@ if (!empty($token)){
 
             $errors = []; //Mảng lưu trữ các lỗi
 
-            //Validate mật khẩu: Bắt buộc phải nhập, >=8 ký tự
+            //Validate mật khẩu: Bắt buộc phải nhập, >=6 ký tự
             if (empty(trim($body['password']))){
                 $errors['password']['required'] = '** Mật khẩu bắt buộc phải nhập!';
             }else{
@@ -87,9 +87,9 @@ if (!empty($token)){
             </div>
             <div class="col-3" style="margin: 20px auto;">
                 <div class="login">
-                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logo-final.png" class="logo-login" alt="">
+                    <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logomain.png" class="logo-login" alt="">
                     <p class="text-center title-login">ĐỔI MẬT KHẨU</p>
-                    <p class="text-center" style="color: #000; margin-bottom: 20px">Hệ thống quản lý phòng trọ cho thuê</p>
+                    <p class="text-center" style="color: #000; margin-bottom: 20px">Hãy điền các thông tin bên dưới và nhấn xác nhận để được cấp lại mật khẩu.</p>
 
                     <form style="text-align: left; margin-top: 25px" action="" method="post">     
                         <div class="form-group">

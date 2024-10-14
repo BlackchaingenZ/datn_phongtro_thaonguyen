@@ -115,7 +115,7 @@ layout('navbar', 'admin', $data);
                 </div>
                 <div class="form-group">                    
                     <div class="btn-row">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Thêm danh mục</button>
+                        <button type="submit" class="btn btn-secondary "><i class="fa fa-edit"></i> Thêm danh mục</button>
                     </div>
                 </div>
             </form>
@@ -169,7 +169,7 @@ layout('navbar', 'admin', $data);
              ?>
             </div>
 
-            <a style="margin-top: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-success">Quay lại <i class="fa fa-forward"></i></a>
+            <a style="margin-top: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại </a>
             
         </div>
     <div>

@@ -46,10 +46,19 @@ a {
     height: 50px;
 }
 
+.btn-secondary {
+    transition: transform 0.3s ease;
+    margin: 0 5px; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1); /* Phóng to nút lên 10% khi di chuột qua */
+}
+
 .btn-status-err {
     font-size: 10px;
     padding: 6px 8px;
-    color: #F64E60;
+    color: #0e0102;
     background-color: #FFE2E5;
     border-radius: 8px;
 }
@@ -139,7 +148,7 @@ th {
 }
 
 .menu__item {
-    border: 1px solid #15a05c;
+    border: 1px solid #ffffff;
     border-radius: 10px;
     padding: 10px 5px;
     height: 100px;
@@ -147,13 +156,13 @@ th {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #dcdbdb;
     width: 160px;
     text-align: center;
 }
-
+/* danh sách menu*/
 .menu__item-image {
-    width: 65px;
+    width: 55px;
     height: 65px;
 }
 
@@ -170,8 +179,8 @@ th {
 .menu__list {
     padding: 2px 0;
     display: flex;
-    /* justify-content: space-between; */
-    gap: 20px;
+    justify-content: space-between;
+    /* gap: 20px; */
     overflow-x:auto;
 }
 
@@ -238,17 +247,19 @@ th {
     -webkit-box-align: center;
     align-items: center;
     background-color: #fff;
-    border: 1px solid #1bc5bd;
+    border: 1px solid #eeeded;
     border-radius: 10px;
     margin: 10px 5px;
     font-size: 13px;
     padding: 12px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
+/* Hiệu ứng khi di chuột vào */
 .nav__item:hover {
-
-    color: #000;
-    background-color: #eee;
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .image__room {
@@ -257,7 +268,7 @@ th {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #dc3545;
+    background-color: #a4a4a4;
     border-radius: 50%;
 }
 
@@ -267,13 +278,13 @@ th {
     justify-content: center;
     width: 30px;
     height: 30px;
-    background-color: #ED6004;
+    background-color: #a4a4a4;
     border-radius: 50%;
 }
 
 .image__bill-img {
-    width: 20px;
-    height: 20px;
+    width: 29px;
+    height: 29px;
 }
 
 .content-header {
@@ -287,7 +298,7 @@ th {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #7dc242;
+    background-color:#cacaca;
     border-radius: 50%;
 }
 
@@ -302,8 +313,10 @@ th {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #7dc242;
+    background-color: #a4a4a4;
     border-radius: 50%;
+    flex-direction: column; /* Sắp xếp các khối theo cột */
+    gap: 20px;
 }
 
 .box-content {
@@ -311,11 +324,18 @@ th {
     margin-top: 15px;
     width: auto;
     height: 60vh;
-    background: #fff;
+    background: #eeeded;
     border-radius: 15px;
     padding: 20px 20px;
 }
 
+.box-content2 {
+    margin-top: 15px;
+    width: auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px 20px;
+}
 .modal {
     display: none;
     position: fixed;
@@ -364,7 +384,7 @@ th {
     font-size: 10px;
     padding: 6px 8px;
     color: #fff;
-    background-color: #1a1919;
+    background-color: #35a0f7;
     border-radius: 8px;
 }
 
@@ -416,12 +436,18 @@ th {
 .total-room {
     padding: 10px 15px 25px;
     width: 100%;
-    background-color: #28788f;
+    background-color: #fa4b4b;
     border-radius: 12px;
     height: 120px;
-    color: #fff;
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
+.total-room:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
 .content-left-title {
     display: flex;
     align-items: center;
@@ -440,7 +466,7 @@ th {
 
 .total-desc {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -451,9 +477,9 @@ th {
 }
 
 .content-left-child {
-    color: #fff;
+    color: #000000;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin-top: 15px;
 }
 
@@ -461,41 +487,81 @@ th {
     position: relative;
     width: 50%;
     height: 120px;
-    background: #018dff;
+    background: #979593;
     border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-one:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-two {
     position: relative;
     height: 120px;
     width: 50%;
-    background-color: #ff9800;
-    border-radius: 14px
+    background-color: #979593;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-two:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-three {
     position: relative;
     height: 120px;
     width: 50%;
-    background-color: #3ca05c;
-    border-radius: 14px
+    background-color: #979593;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-three:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-four {
     position: relative;
     height: 120px;
     width: 50%;
-    background-color: #e04719;
-    border-radius: 14px
+    background-color: #979593;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-four:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-five {
     width: 100%;
     padding: 5px;
     height: 120px;
-    background: #fff4f4;
+    background: #979593;
     border-radius: 14px;
-    color: red;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-five:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-six {
@@ -503,9 +569,17 @@ th {
     width: 100%;
     padding: 10px;
     height: 120px;
-    background: #ffc1072e;
+    background: #979593;
     border-radius: 14px;
-    color: #ff9800 !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.child-six:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .child-seven {
@@ -513,12 +587,21 @@ th {
     width: 100%;
     padding: 10px;
     height: 120px;
-    background: #d0ffdf;
+    background: #979593;
     border-radius: 14px;
-    color: #3ca05c !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
-.dashboard-link {
+/* Hiệu ứng khi di chuột vào */
+.child-seven:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
+/*viền bo góc*/
+/*.dashboard-link {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -527,7 +610,7 @@ th {
     bottom: 10px;
     right: 10px;
    
-}
+}*/
 
 .background-icon {
     background: hsl(0deg 100% 80% / 20%) !important;
@@ -562,11 +645,16 @@ th {
     padding: 20px 20px;
     border-radius: 12px;
     width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
+/* Hiệu ứng khi di chuột vào */
 .collect-item:hover {
-    box-shadow: 1px 1px 8px #15a05c;
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
+
 
 .collect-left_top {
     justify-content: space-between;
@@ -590,7 +678,7 @@ th {
 }
 
 .service-btn {
-    background-color: #15a05c;
+    background-color: #a4a4a4;
     width: 50px;
     height: 50px;
     display: flex;
@@ -598,11 +686,13 @@ th {
     justify-content: center;
     border-radius: 50%;
     transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng */
 }
 
 .service-btn:hover {
-    scale: 1.1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bóng lớn hơn khi hover */
 }
+
 
 .service-item {
     display: flex;
@@ -611,7 +701,16 @@ th {
     border: 1px solid #ccc;
     padding: 10px 10px;
     border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
+
+.service-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bóng lớn hơn khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
 
 .service-item_left {
     display: flex;
@@ -654,8 +753,17 @@ th {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #eee;
+    background: #43b0fd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
+
+.service-item_right .edit:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bóng lớn hơn khi hover */
+    transform: scale(1.09); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
 
 .service-item_right .del {
     display: flex;
@@ -665,7 +773,16 @@ th {
     height: 50px;
     border-radius: 50%;
     background: #ee3a4e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
+
+.service-item_right .del:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bóng lớn hơn khi hover */
+    transform: scale(1.09); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
 
 .water {
     margin-top: 20px;
@@ -699,14 +816,29 @@ th {
     border-radius: 10px;
     width: 250px;
     padding: 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
 }
 
+/* Hiệu ứng khi di chuột vào */
+.report-receipt:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
 
 .report-spend {
     background: #4caf5014;
     border-radius: 10px;
     width: 250px;
     padding: 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.report-spend:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 .report-sumary {
@@ -771,7 +903,7 @@ th {
     width: 100%;
     height: auto;
     padding: 30px 40px;
-    background-color: #fff;
+    background-color:#dbdada;
     border-radius: 8px;
 }
 
@@ -792,7 +924,7 @@ th {
 .account-bot__right {
     width: 70%;
     height: auto;
-    background-color: #fff;
+    background-color: #dbdada;
     border-radius: 8px;
 }
 
@@ -857,8 +989,8 @@ th {
 
 .box-action {
     position: absolute;
-    width: 200px;
-    padding: 20px 10px;
+    width: 210px;
+    padding: 10px 20px;
     display: none;
     background-color: #fff;
     border-radius: 8px;
@@ -869,7 +1001,15 @@ th {
 }
 
 .action.active .box-action {
-    display: block;
+    display: inline-block;
 }
 
-
+.alert-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .alert-hover:hover {
+    transform: scale(1.01); /* Phóng to nhẹ */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng hiệu ứng đổ bóng */
+  }
+  

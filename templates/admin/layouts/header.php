@@ -64,21 +64,21 @@ if(!isLogin()) { // Khi CSDL không còn dữ liệu trùng khớp thì tự đ�
             <!-- Logo -->
             <a href="<?php echo _WEB_HOST_ROOT.'?module=dashboard' ?>" class="logo">
               <img
-                  src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logo-final.png"
+                  src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logomain.png"
                   alt=""
                   class="logo__image"
               />
-              <p class="logo__title">Nhà trọ Ngọc Chiến</p>
+              <p class="logo__title">Phòng Trọ Thảo Nguyên</p>
             </a>
 
             <div class="nav__list">
                 <a href="<?php echo getLinkAdmin('users','account'); ?>" class="nav__item">
-                  <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/baocao.svg" alt="">
+                  <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/account.svg" alt="">
                   <span>Tài khoản</span>
                 </a>
 
                 <a href="<?php echo getLinkAdmin('auth','logout'); ?>" class="nav__item">
-                  <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/baocao.svg" alt="">
+                  <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logout.svg" alt="">
                   <span>Đăng xuất</span>
                 </a>
             </div>

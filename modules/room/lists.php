@@ -142,7 +142,7 @@ layout('navbar', 'admin', $data);
             </div>
 
             <div class="col">
-                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
             </div>
             </div>
             <input type="hidden" name="module" value="room">
@@ -152,11 +152,11 @@ layout('navbar', 'admin', $data);
     <div>
   
 </div>
-            <a href="<?php echo getLinkAdmin('room', 'add') ?>" class="btn btn-success" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="<?php echo getLinkAdmin('room', 'add') ?>" class="btn btn-secondary" style="color: #fff"><i class="fa fa-plus"></i> Thêm mới </a>
             <a href="<?php echo getLinkAdmin('room', 'lists'); ?>" class="btn btn-secondary"><i class="fa fa-history"></i> Refresh</a>
-            <button type="submit" name="deleteMultip" value="Delete" onclick="return confirm('Bạn có chắn chắn muốn xóa không ?')" class="btn btn-danger"><i class="fa fa-trash"></i> Xóa</button>
-            <a href="<?php echo getLinkAdmin('room', 'import'); ?>" class="btn btn-success minn"><i class="fa fa-upload"></i> Import</a>
-            <a href="<?php echo getLinkAdmin('room', 'export'); ?>" class="btn btn-success minn"><i class="fa fa-save"></i> Xuất Excel</a>
+            <button type="submit" name="deleteMultip" value="Delete" onclick="return confirm('Bạn có chắn chắn muốn xóa không ?')" class="btn btn-secondary"><i class="fa fa-trash"></i> Xóa</button>
+            <a href="<?php echo getLinkAdmin('room', 'import'); ?>" class="btn btn-secondary"><i class="fa fa-upload"></i> Import</a>
+            <a href="<?php echo getLinkAdmin('room', 'export'); ?>" class="btn btn-secondary"><i class="fa fa-save"></i> Xuất Excel</a>
 
             <table class="table table-bordered mt-3">
                 <thead>
@@ -166,6 +166,7 @@ layout('navbar', 'admin', $data);
                         </th>
                         <th></th>
                         <th wìdth="5%">STT</th>
+                        <th>Ảnh</th>
                         <th>Tên phòng</th>
                         <th>Diện tích</th>
                         <th>Giá thuê</th>
@@ -195,10 +196,11 @@ layout('navbar', 'admin', $data);
                                 
                         <td>
                             <div class="image__room">
-                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/image-room.png" class="image__room-img" alt="">
+                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/apartment.png" class="image__room-img" alt="">
                             </div>
                         </td>
                         <td><?php echo $count; ?></td>
+                        <td><img style="width: 70px; height: 50px" src="<?php echo $item['image'] ?>" alt=""></td>
                         <td><b><?php echo $item['tenphong']; ?></b></td>
                         <td><?php echo $item['dientich'] ?> m2</td>
                         <td><b><?php echo number_format($item['giathue'], 0, ',', '.') ?> đ</b></td>
@@ -215,7 +217,7 @@ layout('navbar', 'admin', $data);
                         </td>
                 
                         <td class="">
-                            <a href="<?php echo getLinkAdmin('room','edit',['id' => $item['id']]); ?>" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> </a>
+                            <a href="<?php echo getLinkAdmin('room','edit',['id' => $item['id']]); ?>" class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i> </a>
                             <a href="<?php echo getLinkAdmin('room','delete',['id' => $item['id']]); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')"><i class="fa fa-trash"></i> </a>
                         </td>                
                          

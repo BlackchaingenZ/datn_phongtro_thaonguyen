@@ -32,8 +32,8 @@ if (!empty($filter) && strpos($filter, 'WHERE') >= 0) {
 $filter .= " $operator bill.create_at LIKE '%$datebill%'";
 
 $allService = getRaw("SELECT * FROM services");
-$listAllBill = getRaw("SELECT *, bill.id, room.tenphong, tenant.zalo FROM bill 
-INNER JOIN room ON bill.room_id = room.id INNER JOIN tenant ON bill.tenant_id = tenant.id $filter ORDER BY bill.create_at DESC ");
+$listAllBill = getRaw("SELECT *, bill.id, room.tenphong FROM bill 
+INNER JOIN room ON bill.room_id = room.id  $filter ORDER BY bill.create_at DESC ");
 
 // Xử lý Thêm/Sửa dịch vụ
 if (isPost()) {
@@ -134,8 +134,8 @@ layout('navbar', 'admin', $data);
                 </div>
                 <div class="form-group">                    
                     <div class="btn-row">
-                        <button style="margin-right: 10px" type="submit" class="btn btn-success"><i class="fa fa-save"></i> Lưu</button>
-                        <button type="button" class="btn btn-danger" onclick="closeServiceModal()">Hủy</button>
+                        <button style="margin-right: 10px" type="submit" class="btn btn-secondary"><i class="fa fa-save"></i> Lưu</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeServiceModal()">Hủy</button>
                     </div>
                 </div>
             </form>
@@ -147,9 +147,9 @@ layout('navbar', 'admin', $data);
             <div class="service-left_top">
                 <div>
                     <h3>Quản lý dịch vụ</h3>
-                    <i>Các dịch vụ khách thuê xài</i>
+                    <i>Các dịch vụ khách sử dụng</i>
                 </div>
-                <button class="service-btn" style="border: none; color: #fff" onclick="openServiceModal()"><i class="fa fa-plus"></i></button>
+                <!--<button class="service-btn" style="border: none; color: #fff" onclick="return alert('Chức năng này đang được mở rộng')"><i class="fa fa-plus"></i></button>-->
             </div>
 
             <?php 
@@ -199,7 +199,7 @@ layout('navbar', 'admin', $data);
                                 </div>
 
                                 <div class="col">
-                                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
                                  </div>   
                             </div>
                             <input type="hidden" name="module" value="services">
@@ -212,10 +212,10 @@ layout('navbar', 'admin', $data);
                     <tr>
                         <th width="3%" rowspan="2"></th>
                         <th rowspan="2">Tên phòng</th>
-                        <th colspan="3">Tiền điện (1.700đ)</th>
-                        <th colspan="3">Tiền nước (20.000đ)</th>
-                        <th colspan="2">Tiền rác (10.000đ)</th>
-                        <th colspan="2">Tiền Wifi (50.000đ)</th>
+                        <th colspan="3">Tiền điện</th>
+                        <th colspan="3">Tiền nước</th>
+                        <th colspan="2">Tiền rác</th>
+                        <th colspan="2">Tiền Wifi</th>
                     </tr>
                     <tr>
                         <th>Số cũ</th>

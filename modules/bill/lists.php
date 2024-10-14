@@ -76,7 +76,7 @@ if (isGet()) {
             $operator = 'WHERE';
         }
         
-        $filter .= "$operator trangthaihoadon=$statusSql";
+        $filter .= "$operator bill.trangthaihoadon=$statusSql";
     }
 }
 
@@ -96,7 +96,7 @@ if(!empty(getBody()['page'])) {
 }
 $offset = ($page - 1) * $perPage;
 $listAllBill = getRaw("SELECT *, bill.id, bill.chuky, room.tenphong, tenant.zalo FROM bill 
-INNER JOIN room ON bill.room_id = room.id INNER JOIN tenant ON bill.tenant_id = tenant.id $filter  ORDER BY bill.create_at DESC  LIMIT $offset, $perPage");
+INNER JOIN room ON bill.room_id = room.id LEFT JOIN tenant ON bill.tenant_id = tenant.id $filter  ORDER BY bill.create_at DESC  LIMIT $offset, $perPage");
 
 // Xử lý query string tìm kiếm với phân trang
 $queryString = null;
@@ -135,7 +135,7 @@ layout('navbar', 'admin', $data);
                             <option value="">Chọn trạng thái</option>
                             <option value="1" <?php echo (!empty($status) && $status==1) ? 'selected':false; ?>>Đã thu</option>
                             <option value="2" <?php echo (!empty($status) && $status==2) ? 'selected':false; ?>>Chưa thu</option>
-                            <option value="3" <?php echo (!empty($status) && $status==3) ? 'selected':false; ?>>Đang nợ tiền</option>
+                            <option value="3" <?php echo (!empty($status) && $status==3) ? 'selected':false; ?>>Đang nợ</option>
                         </select>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ layout('navbar', 'admin', $data);
                 </div>
 
                 <div class="col">
-                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
                 </div>   
             </div>
             <input type="hidden" name="module" value="bill">
@@ -159,10 +159,10 @@ layout('navbar', 'admin', $data);
     <div>
   
 </div>
-            <a href="<?php echo getLinkAdmin('bill', 'add') ?>" class="btn btn-success" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="<?php echo getLinkAdmin('bill', 'add') ?>" class="btn btn-secondary" style="color: #fff"><i class="fa fa-plus"></i> Thêm mới </a>
             <a href="<?php echo getLinkAdmin('bill', 'lists'); ?>" class="btn btn-secondary"><i class="fa fa-history"></i> Refresh</a>
-            <a href="<?php echo getLinkAdmin('bill', 'import'); ?>" class="btn btn-success minn"><i class="fa fa-upload"></i> Import</a>
-            <a href="<?php echo getLinkAdmin('bill', 'export'); ?>" class="btn btn-success minn"><i class="fa fa-save"></i> Xuất Excel</a>
+            <a href="<?php echo getLinkAdmin('bill', 'import'); ?>" class="btn btn-secondary"><i class="fa fa-upload"></i> Import</a>
+            <a href="<?php echo getLinkAdmin('bill', 'export'); ?>" class="btn btn-secondary"><i class="fa fa-save"></i> Xuất Excel</a>
 
             <table class="table table-bordered mt-3" style="overflow-x: auto;">
                 <thead>
@@ -209,7 +209,7 @@ layout('navbar', 'admin', $data);
                      <tr>
                         <td>
                             <div class="image__bill">
-                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/bill-icon.svg" class="image__bill-img" alt="">
+                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/bill.png" class="image__bill-img" alt="">
                             </div>
                         </td>
                         <td><?php echo $item['tenphong']; ?></td>
@@ -217,10 +217,16 @@ layout('navbar', 'admin', $data);
                         <td><?php echo $item['songayle']; ?></td>
                         <td><b><?php echo number_format($item['tienphong'], 0, ',', '.') ?> đ</b></td>
                         <td><?php echo $item['sodiencu']; ?></td>
-                        <td><?php echo $item['sodienmoi']; ?></td>
+                        <td>
+                            <?php echo $item['sodienmoi']; ?>
+                            <a target="_blank" href="<?php echo getLinkAdmin('bill','img_sdm',['id' => $item['id']]); ?>" class="fa fa-eye"></a>
+                        </td>
                         <td><b><?php echo number_format($item['tiendien'], 0, ',', '.') ?> đ</b></td>
                         <td><?php echo $item['sonuoccu']; ?></td>
-                        <td><?php echo $item['sonuocmoi']; ?></td>
+                        <td>
+                            <?php echo $item['sonuocmoi']; ?>
+                            <a target="_blank" href="<?php echo getLinkAdmin('bill','img_snm',['id' => $item['id']]); ?>" class="fa fa-eye"></a>
+                        </td>
                         <td><b><?php echo number_format($item['tiennuoc'], 0, ',', '.') ?> đ</b></td>
                         <td><?php echo $item['songuoi']; ?></td>
                         <td><b><?php echo number_format($item['tienrac'], 0, ',', '.') ?> đ</b></td>
@@ -241,7 +247,7 @@ layout('navbar', 'admin', $data);
                                  } elseif($item['trangthaihoadon'] == 0) {
                                     echo '<span class="btn-kyhopdong-warning">Chưa thu</span>';
                                  } else {
-                                    echo '<span class="btn-kyhopdong-err">Đang nợ tiền</span>';
+                                    echo '<span class="btn-kyhopdong-err">Đang nợ</span>';
                                  }
                             ?>
                         </td>

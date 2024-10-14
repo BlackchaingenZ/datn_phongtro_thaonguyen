@@ -47,8 +47,8 @@ if(!empty(getBody()['page'])) {
 }
 $offset = ($page - 1) * $perPage;
 
-$listAllPayment = getRaw("SELECT *, tenphong, tendanhmuc, payment.id FROM payment INNER JOIN room ON room.id = payment.room_id 
-INNER JOIN category_spend ON category_spend.id = payment.danhmucchi_id $filter LIMIT $offset, $perPage");
+$listAllPayment = getRaw("SELECT *, tenphong, tendanhmuc, payment.id FROM payment LEFT JOIN room ON room.id = payment.room_id 
+LEFT JOIN category_spend ON category_spend.id = payment.danhmucchi_id $filter LIMIT $offset, $perPage");
 
 // Xử lý query string tìm kiếm với phân trang
 $queryString = null;
@@ -100,7 +100,7 @@ layout('navbar', 'admin', $data);
                 </div>
 
                 <div class="col">
-                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                        <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
                 </div>
             </div>
             <input type="hidden" name="module" value="payment">
@@ -109,10 +109,10 @@ layout('navbar', 'admin', $data);
     <div>
   
 </div>
-            <a href="<?php echo getLinkAdmin('payment', 'add') ?>" class="btn btn-success" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="<?php echo getLinkAdmin('payment', 'add') ?>" class="btn btn-secondary" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
             <a href="<?php echo getLinkAdmin('payment'); ?>" class="btn btn-secondary"><i class="fa fa-history"></i> Refresh</a>
-            <a href="<?php echo getLinkAdmin('payment', 'export'); ?>" class="btn btn-success minn"><i class="fa fa-save"></i> Xuất Excel</a>
-            <a style="margin-left: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+            <a href="<?php echo getLinkAdmin('payment', 'export'); ?>" class="btn btn-secondary"><i class="fa fa-save"></i> Xuất Excel</a>
+            <!--<a style="margin-left: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-secondary"><i class="fa fa-forward"></i></a>-->
             <table class="table table-bordered mt-3">
                 <thead>
                     <tr>
@@ -120,7 +120,6 @@ layout('navbar', 'admin', $data);
                         <th wìdth="5%">STT</th>
                         <th>Khoản</th>
                         <th>Loại</th>
-                        <th>Tên phòng</th>
                         <th>Số tiền</th>
                         <th>Ghi chú</th>
                         <th>Ngày phát sinh</th>
@@ -140,19 +139,18 @@ layout('navbar', 'admin', $data);
                     <tr>        
                         <td>
                             <div class="image__bill">
-                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/bill-icon.svg" class="image__bill-img" alt="">
+                                <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/bill.png" class="image__bill-img" alt="">
                             </div>
                         </td>
                         <td><?php echo $count; ?></td>
                         <td style="color: green"><b><?php echo $item['tendanhmuc']; ?></b></td>
                         <td><span style="background: #d93025; color: #fff; padding: 2px 4px; border-radius: 5px; font-size: 12px">Khoản chi</span></td>
-                        <td><?php echo $item['tenphong'] ?></td>
                         <td><b><?php echo number_format($item['sotien'], 0, ',', '.') ?> đ</b></td>
                         <td><?php echo $item['ghichu'] ?></td>
                         <td><?php echo getDateFormat($item['ngaychi'],'d-m-Y'); ?></td> 
                         <td style="text-align: center"><?php echo $item['phuongthuc'] == 0 ? '<span class="btn-kyhopdong-second">Tiền mặt</span>' : '<span class="btn-kyhopdong-second">Chuyển khoản</span>' ?></td>              
                         <td class="">
-                            <a title="In hợp đồng" target="_blank" href="<?php echo getLinkAdmin('payment','print',['id' => $item['id']]) ?>" class="btn btn-secondary btn-sm" ><i class="fa fa-print"></i> </a>
+                            <a title="In hợp đồng" target="_blank" href="<?php echo getLinkAdmin('payment','print',['id' => $item['id']]) ?>" class="btn btn-dark btn-sm" ><i class="fa fa-print"></i> </a>
                             <a href="<?php echo getLinkAdmin('payment','edit',['id' => $item['id']]); ?>" class="btn btn-warning btn-sm" ><i class="fa fa-edit"></i> </a>
                             <a href="<?php echo getLinkAdmin('payment','delete',['id' => $item['id']]); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')"><i class="fa fa-trash"></i> </a>
                         </td>                

@@ -12,7 +12,7 @@ layout('header', 'admin', $data);
 layout('breadcrumb', 'admin', $data);
 
 // Truy vấn lấy ra danh sách nhóm
-$allGroups = getRaw("SELECT id, name FROM groups ORDER BY id");
+$allGroups = getRaw("SELECT id, name FROM `groups` ORDER BY id");
 $allRoom = getRaw("SELECT id, tenphong, soluong FROM room ORDER BY tenphong");
 
 

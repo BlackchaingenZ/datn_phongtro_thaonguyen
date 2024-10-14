@@ -113,7 +113,7 @@ layout('navbar', 'admin', $data);
             </div>
 
             <div class="col">
-                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                    <button style="height: 50px; width: 50px" type="submit" class="btn btn-secondary"> <i class="fa fa-search"></i></button>
             </div>
             </div>
             <input type="hidden" name="module" value="receipt">
@@ -121,10 +121,10 @@ layout('navbar', 'admin', $data);
         <form action="" method="POST" class="mt-3">
     <div>
 </div>
-            <a href="<?php echo getLinkAdmin('receipt', 'add') ?>" class="btn btn-success" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
+            <a href="<?php echo getLinkAdmin('receipt', 'add') ?>" class="btn btn-secondary" style="color: #fff"><i class="fa fa-plus"></i> Thêm</a>
             <a href="<?php echo getLinkAdmin('receipt'); ?>" class="btn btn-secondary"><i class="fa fa-history"></i> Refresh</a>
-            <a href="<?php echo getLinkAdmin('receipt', 'export'); ?>" class="btn btn-success minn"><i class="fa fa-save"></i> Xuất Excel</a>
-            <a style="margin-left: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+            <a href="<?php echo getLinkAdmin('receipt', 'export'); ?>" class="btn btn-secondary"><i class="fa fa-save"></i> Xuất Excel</a>
+            <!--<a style="margin-left: 20px " href="<?php echo getLinkAdmin('sumary') ?>" class="btn btn-secondary"><i class="fa fa-forward"></i></a>-->
             <table class="table table-bordered mt-3">
                 <thead>
                     <tr>

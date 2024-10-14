@@ -11,7 +11,7 @@ layout('header', 'admin', $data);
 layout('breadcrumb', 'admin', $data);
 
 // Truy vấn lấy ra danh sách nhóm
-$allGroups = getRaw("SELECT id, name FROM groups ORDER BY id");
+$allGroups = getRaw("SELECT id, name FROM `groups` ORDER BY id");
 $allRoom = getRaw("SELECT id, tenphong, soluong FROM room ORDER BY tenphong");
 $allEmail = getRaw("SELECT email FROM users");
 
@@ -148,12 +148,10 @@ layout('navbar', 'admin', $data);
                         <option value="">Chọn phòng</option>
                         <?php
                             if(!empty($allRoom)) {
-                                foreach($allRoom as $item) {
-                                    if($item['soluong'] < 2 ) {
+                                foreach($allRoom as $item) {                                   
                         ?>
-                                        <option value="<?php echo $item['id'] ?>" <?php echo (!empty($roomId) && $roomId == $item['id'])?'selected':'' ?>><?php echo $item['tenphong'] ?></option> 
-                        <?php
-                                    }
+                                    <option value="<?php echo $item['id'] ?>" <?php echo (!empty($roomId) && $roomId == $item['id'])?'selected':'' ?>><?php echo $item['tenphong'] ?></option> 
+                        <?php                                  
                                 }
                             }
                         ?>
@@ -172,8 +170,9 @@ layout('navbar', 'admin', $data);
             </div>                  
             <div class="from-group">                    
                 <div class="btn-row">
-                    <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Thêm người dùng</button>
-                    <a style="margin-left: 20px " href="<?php echo getLinkAdmin('users') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                <a style="margin-right: 20px " href="<?php echo getLinkAdmin('users') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại </a>
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Thêm người dùng</button>
+                    
                 </div>
             </div>
         </form>

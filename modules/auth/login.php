@@ -78,9 +78,9 @@ $old = getFlashData('old');
         </div>
     <div class="col-3" style="margin: 20px auto;">
         <div class="login">
-            <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logo-final.png" class="logo-login" alt="">
-        <p class="text-center title-login">WELCOME TO NGOC CHIEN</p>
-        <p class="text-center" style="color: #000; margin-bottom: 20px">Hệ thống quản lý phòng trọ cho thuê</p>
+            <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/logomain.png" class="logo-login" alt="">
+        <p class="text-center title-login">HỆ THỐNG QUẢN LÝ PHÒNG TRỌ THẢO NGUYÊN</p>
+        <p class="text-center" style="color: #000; margin-bottom: 20px">Hiệu quả - Chuyên nghiệp - Tiết kiệm chi phí</p>
 
 
 

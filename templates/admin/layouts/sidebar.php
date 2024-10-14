@@ -14,7 +14,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo _WEB_HOST_ROOT.'/?module=dashboard'; ?>" class="brand-link">
-      <span class="brand-text font-weight-light text-uppercase">Motel</span>
+      <span class="brand-text font-weight-light text-uppercase">Nội Dung</span>
     </a>
 
     <!-- Sidebar -->

@@ -63,7 +63,7 @@ $errors = getFlashData('errors');
         <div class="account"> 
             <div class="account-top">
                 <div class="account-top__info">
-                    <img src="https://quanlytro.me/images/avatar.png" alt="" class="account-avt">
+                    <img src="https://img.freepik.com/premium-photo/simple-smile-happy-man-digital-portrait-bright-red-background_96461-13322.jpg?w=740" alt="" class="account-avt">
                     <div class="account-name">
                         <div class="account-fullname"><?php echo $userDetail['fullname'] ?></div>
                         <p class="account-active"><i class="fa-regular fa-circle-check"></i>Đang hoạt động</p>
@@ -72,7 +72,7 @@ $errors = getFlashData('errors');
             </div>
             <div class="account-bot">
                 <div class="account-bot__left">
-                    <img src="https://quanlytro.me/images/home_feature/feature-3-thanh-toan-online-doc.jpg" class="bot-left_image" alt="">
+                    <img src="https://img.freepik.com/free-vector/reset-password-concept-illustration_114360-7896.jpg?t=st=1728897207~exp=1728900807~hmac=e6893b42034e2342f8f2c90fcc68ae4ea803a35c7588ca3b271d6aa6d88844ab&w=740" class="bot-left_image" alt="">
                 </div>
                 <div class="account-bot__right">
                     <div class="account_action">
@@ -82,12 +82,12 @@ $errors = getFlashData('errors');
                         </div>
                     </div>
                     <hr />
-                    <div style="background: #ffe2e5; color: #f64e60; padding: 20px 20px"  class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <div style="background: #ffe2e5; color: #f64e60; padding: 20px 20px"  class="alert alert-danger alert-dismissible fade show alert-hover" role="alert">
                         <div style="display: flex; gap: 20px">
                             <div >
                                 <i class="fa-solid fa-circle-info"></i>
                             </div>
-                            <p>Bạn nên thay đổi mật khẩu định kỳ để đảm bảo an toàn hơn cho tài khoản của bạn!</p>
+                            <p>Nên thay đổi mật khẩu thường xuyên để đảm bảo an toàn cho tài khoản của bạn!</p>
                         </div>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -103,7 +103,7 @@ $errors = getFlashData('errors');
                                 <label style="width: 200px; font-size: 14px; color: #3F4254; font-weight: 400;" for="">Xác thực mật khẩu</label>
                                 <input style="border: none; background: #f3f6f9; width: 300px; border-radius: 8px; padding: 0 12px" type="password" name="confirm_password" class="" placeholder="Verify password" required>
                             </div>
-                            <button type="submit" style="margin-left: 205px; background: #1bc5bd; color: #fff; border: none; font-size: 14px; padding: 8px 14px" class="btn">Cập nhật</button>
+                            <button type="submit" style="margin-left: 205px; background: #a4a4a4; color: #fff; border: none; font-size: 14px; padding: 8px 14px" class="btn-secondary">Thực hiện</button>
                     </form>
                 </div>
             </div>
