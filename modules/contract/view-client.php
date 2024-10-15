@@ -7,7 +7,7 @@
     $allTenant = getRaw("SELECT * FROM tenant WHERE room_id = $roomId");
     $contractDetail  = firstRaw("SELECT * FROM contract WHERE contract.room_id = $roomId");
     $tenantId = $contractDetail['tenant_id'];
-
+    
     $tenantDetail = firstRaw("SELECT * FROM tenant WHERE id = $tenantId");
     $roomtDetail = firstRaw("SELECT * FROM room WHERE id = $roomId");
 
@@ -46,7 +46,7 @@
         </p><p>
         </p></div>
         <div style="text-align: center;margin: 30px 0;font-size: 12pt;">
-         <p><strong style="text-transform:uppercase;">HỢP ĐỒNG CHO THUÊ PHÒNG TRỌ</strong></p>
+         <p><strong style="text-transform:uppercase;">HỢP ĐỒNG CHO THUÊ PHÒNG TRỌ THẢO NGUYÊN</strong></p>
         </div>
         <div style="text-align: left;font-size: 12pt;">
          <p><strong>BÊN A : BÊN CHO THUÊ (PHÒNG TRỌ)</strong></p>
@@ -54,22 +54,22 @@
                         <tbody>
                         <tr>
                             <td colspan="2">
-                                <p>Họ và tên: Nguyễn Ngọc Chiến</p>
+                                <p>Họ và tên: Nguyễn Minh Thảo</p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2"> 
-                                <p>Năm sinh: 20/09/1975</p>
+                                <p>Năm sinh: 23/9/1972</p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>CMND/CCCD: 021567845982</p>
+                                <p>CMND/CCCD: 012020100322</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p>Ngày cấp: 12/08/2022</p>
+                                <p>Ngày cấp: 27/08/2023 </p>
                             </td>
                             <td>
                                 <p>Nơi cấp: Công an thành phố Hải Phòng</p>
@@ -77,7 +77,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <p>Thường trú: 597 - Nguyễn Bình Khiêm - Hải An - Hải Phòng</p>
+                                <p>Thường trú: 56 Nam Pháp 1 Ngô Quyền,Hải Phòng</p>
                             </td>
                         </tr>
                     </tbody></table>
@@ -130,7 +130,7 @@
         <div style="text-align: left;font-size: 12pt;">
           <p><strong>Điều 1:</strong></p>
                     <ul style="list-style-type: circle;">
-                        <li> <span>Bên A đồng ý cho bên B thuê một phòng trọ thuộc địa chỉ: 597 - Nguyễn Bỉnh Khiêm, Đằng Lâm, Hải An, Hải Phòng </span></li>
+                        <li> <span>Bên A đồng ý cho bên B thuê một phòng trọ thuộc địa chỉ: 56 Nam Pháp 1 Ngô Quyền,Hải Phòng </span></li>
                         <li><span>Thời hạn thuê phòng trọ là kể từ ngày <?php echo $contractDetail['ngayvao'] ?> đến ngày <?php echo $contractDetail['ngayra'] ?>  </span></li>
                     </ul>
                     <p><strong>Điều 2:</strong></p>
@@ -173,7 +173,7 @@
                                         <span></span>
                                 </div>
                                 <div>
-                        Nguyễn Ngọc Chiến
+                        Nguyễn Minh Thảo
                     </div>
                         </div>
             <div style="flex: 0 0 auto;width: 50%;float: left;text-align: center">

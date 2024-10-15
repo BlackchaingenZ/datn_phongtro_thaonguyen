@@ -134,7 +134,7 @@ layout('navbar', 'admin', $data);
                 <div class="form-group">
                     <label for="">Giới tính <span style="color: red">*</span></label>
                     <select name="gioitinh" id="" class="form-select">
-                        <option value="">Chọn giới tính</option>
+                        <!-- <option value="">Chọn giới tính</option> -->
                         <option value="Nam">Nam</option>
                         <option value="Nữ">Nữ</option>
                     </select>
@@ -193,7 +193,7 @@ layout('navbar', 'admin', $data);
                 <div class="form-group">
                     <label for="">Chọn phòng <span style="color: red">*</span></label>
                     <select name="room_id" id="" class="form-select">
-                        <option value="">Chọn phòng</option>
+                        <!-- <option value="">Chọn phòng</option> -->
                         <?php
                         if (!empty($allRoom)):
                             foreach ($allRoom as $item):

@@ -171,7 +171,7 @@ layout('navbar', 'admin', $data);
                             </div>
 
                             <div class="form-group">
-                                <label for="tiennuoc">Tiền điện (4000đ/1KWh)</label>
+                                <label for="tiennuoc">Tiền điện</label>
                                 <input value="<?php echo old('tiendien', $old); ?>" type="text" class="form-control" id="tiendien"  name="tiendien" >
                              </div>
                         </div>
@@ -190,7 +190,7 @@ layout('navbar', 'admin', $data);
                             </div>
 
                             <div class="form-group">
-                                <label for="tiennuoc">Tiền Nước (20000đ/1m3)</label>
+                                <label for="tiennuoc">Tiền Nước</label>
                                 <input value="<?php echo old('tiennuoc', $old); ?>" type="text" class="form-control" id="tiennuoc" name="tiennuoc" >
                              </div>
                         </div>
@@ -204,7 +204,7 @@ layout('navbar', 'admin', $data);
                             </div>
 
                             <div class="form-group">
-                                <label for="tienrac">Tiền rác (10.000đ/1người)</label>
+                                <label for="tienrac">Tiền rác</label>
                                 <input value="<?php echo old('tienrac', $old); ?>" type="text" class="form-control" id="tienrac" name="tienrac" >
                              </div>
                         </div>
@@ -213,7 +213,7 @@ layout('navbar', 'admin', $data);
                     <div class="col-3">
                         <div class="water">
                             <div class="form-group">
-                                <label for="tienmang">Tiền Wifi (100.000đ/1tháng)</label>
+                                <label for="tienmang">Tiền Wifi</label>
                                 <input value="<?php echo old('tienmang', $old); ?>" type="text" class="form-control" id="tienmang" name="tienmang" >
                              </div>
                         </div>
@@ -254,7 +254,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Tình trạng thu tiền</label>
                             <select name="trangthaihoadon" class="form-select">
-                                <option value="">Chọn trạng thái</option>                               
+                                <!-- <option value="">Chọn trạng thái</option>                                -->
                                 <option value="0" <?php if($billDetail['trangthaihoadon'] == 0) echo 'selected' ?> >Chưa thanh toán</option>
                                 <option value="1" <?php if($billDetail['trangthaihoadon'] == 1) echo 'selected' ?>>Đã thanh toán</option>
                                 <option value="2" <?php if($billDetail['trangthaihoadon'] == 2) echo 'selected' ?>>Đang nợ tiền</option>
@@ -266,8 +266,8 @@ layout('navbar', 'admin', $data);
 
                     <div class="from-group">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Cập nhật</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('bill') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-left: 20px " href="<?php echo getLinkAdmin('bill') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Cập nhật</button>
                             </div>
                     </div>
             </form>

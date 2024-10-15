@@ -95,7 +95,7 @@ $errors = getFlashData('errors');
                             <?php echo form_error('confirm_password', $errors, '<span class="error">', '</span>'); ?>
                         </div>
                     </div>  
-                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Đổi mật khẩu</button>
             </form>
       </div><!-- /.container-fluid -->
     </section>

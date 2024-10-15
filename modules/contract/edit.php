@@ -95,7 +95,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Phòng lập hợp đồng <span style="color: red">*</span></label>
                             <select name="room_id" id="" class="form-select">
-                                <option value="">Chọn phòng</option>
+                                <!-- <option value="">Chọn phòng</option> -->
                                 <?php
                                     if(!empty($allRoom)) {
                                         foreach($allRoom as $item) {
@@ -111,7 +111,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Người đại diện <span style="color: red">*</span></label>
                             <select name="tenant_id" id="" class="form-select">
-                                <option value="">Chọn người đại diện</option>
+                                <!-- <option value="">Chọn người đại diện</option> -->
                                 <?php
                                     if(!empty($allTenant)) {
                                         foreach($allTenant as $item) {
@@ -149,7 +149,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Tình trạng cọc</label>
                             <select name="tinhtrangcoc" class="form-select">
-                                <option value="">Chọn trạng thái</option>                               
+                                <!-- <option value="">Chọn trạng thái</option>                                -->
                                 <option value="0" <?php if($contractDetail['tinhtrangcoc'] == 0) echo 'selected' ?> >Chưa thu tiền</option>
                                 <option value="1" <?php if($contractDetail['tinhtrangcoc'] == 1) echo 'selected' ?>>Đã thu tiền</option>
                             </select>
@@ -157,8 +157,8 @@ layout('navbar', 'admin', $data);
                     </div>                  
                     <div class="from-group">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Cập nhật</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('contract') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('contract') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Cập nhật</button>
                             </div>
                     </div>
             </form>

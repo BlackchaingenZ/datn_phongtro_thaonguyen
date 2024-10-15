@@ -125,7 +125,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Nhóm người dùng</label>
                             <select name="group_id" id="" class="form-control">
-                                <option value="">Chọn nhóm</option>
+                                <!--<option value="">Chọn nhóm</option>-->
                                 <?php
 
                                     if(!empty($allGroups)) {
@@ -144,7 +144,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Phòng đang ở <span style="color: red">*</span></label>
                             <select name="room_id" id="" class="form-select">
-                                <option value="">Chọn phòng</option>
+                                <option value="">Trống</option>
                                 <?php
                                     if(!empty($allRoom)) {
                                         foreach($allRoom as $item) {
@@ -167,7 +167,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Trạng thái</label>
                             <select name="status" class="form-select">
-                                <option value="">Chọn trạng thái</option>
+                                <!--<option value="">Chọn trạng thái</option>-->
                                 <option value="0" <?php echo (old('status', $old) == 0) ? 'selected':false; ?>>Chưa kích hoạt</option>
                                 <option value="1" <?php echo (old('status', $old) == 1) ? 'selected':false; ?>>Đã kích hoạt</option>
                             </select>
@@ -188,8 +188,8 @@ layout('navbar', 'admin', $data);
 
                     <div class="from-group">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Cập nhật người dùng</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('users') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('users') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Cập nhật</button>
                             </div>
                     </div>
                 </form>

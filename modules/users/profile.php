@@ -113,7 +113,7 @@ if (!empty($userDetail) && empty($old)) {
                     </div>             
                 </div>
 
-                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Cập nhật</button>
             </form>
       </div><!-- /.container-fluid -->
     </section>

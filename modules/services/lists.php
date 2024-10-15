@@ -121,7 +121,7 @@ layout('navbar', 'admin', $data);
                 <div class="form-group">
                     <label for="donvitinh">Đơn vị tính <span style="color: red">*</span></label>
                     <select name="donvitinh" id="donvitinh" class="form-select">
-                        <option value="">Chọn đơn vị</option>
+                        <!-- <option value="">Chọn đơn vị</option> -->
                         <option value="KWh">KWh</option>
                         <option value="khoi">Khối</option>
                         <option value="nguoi">Người</option>

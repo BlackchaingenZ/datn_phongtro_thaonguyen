@@ -179,13 +179,13 @@ layout('navbar', 'admin', $data);
                                         <input type="text" placeholder="Ảnh chỉ số điện mới" name="img_sodienmoi" id="name" class="form-control image-render" value="<?php echo old('img_sodienmoi', $old); ?>">   
                                     </div>
                                     <div class="col-1">
-                                        <button type="button" class="btn btn-success btn-sm choose-image"><i class="fa fa-upload"></i></button>
+                                        <button type="button" class="btn btn-secondary btn-sm choose-image"><i class="fa fa-upload"></i></button>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="tiennuoc">Tiền điện (4000đ/1KWh)</label>
+                                <label for="tiennuoc">Tiền điện</label>
                                 <input type="text" class="form-control" id="tiendien"  name="tiendien" >
                              </div>
                         </div>
@@ -210,13 +210,13 @@ layout('navbar', 'admin', $data);
                                         <input type="text" placeholder="Ảnh chỉ số nước mới" name="img_sonuocmoi" id="name" class="form-control image-render" value="<?php echo old('img_sonuocmoi', $old); ?>">   
                                     </div>
                                     <div class="col-1">
-                                        <button type="button" class="btn btn-success btn-sm choose-image"><i class="fa fa-upload"></i></button>
+                                        <button type="button" class="btn btn-secondary btn-sm choose-image"><i class="fa fa-upload"></i></button>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="tiennuoc">Tiền Nước (20000đ/1m3)</label>
+                                <label for="tiennuoc">Tiền Nước</label>
                                 <input type="text" class="form-control" id="tiennuoc" name="tiennuoc" >
                              </div>
                         </div>
@@ -230,7 +230,7 @@ layout('navbar', 'admin', $data);
                             </div>
 
                             <div class="form-group">
-                                <label for="tienrac">Tiền rác (10.000đ/1người)</label>
+                                <label for="tienrac">Tiền rác</label>
                                 <input type="text" class="form-control" id="tienrac" name="tienrac" >
                              </div>
                         </div>
@@ -239,7 +239,7 @@ layout('navbar', 'admin', $data);
                     <div class="col-3">
                         <div class="water">
                             <div class="form-group">
-                                <label for="tienmang">Tiền Wifi (50.000đ/1tháng)</label>
+                                <label for="tienmang">Tiền Wifi</label>
                                 <input type="text" class="form-control" id="tienmang" name="tienmang" >
                              </div>
                         </div>
@@ -272,8 +272,8 @@ layout('navbar', 'admin', $data);
                 </div>
                     <div class="from-group" style="margin-top: 20px">                    
                             <div class="btn-row">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Thêm hóa đơn</button>
-                                <a style="margin-left: 20px " href="<?php echo getLinkAdmin('bill') ?>" class="btn btn-success"><i class="fa fa-forward"></i></a>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('bill') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Thêm hóa đơn</button>
                             </div>
                     </div>
                 </form>

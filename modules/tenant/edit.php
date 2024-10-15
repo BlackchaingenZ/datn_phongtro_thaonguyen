@@ -130,7 +130,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="gioitinh">Giới tính <span style="color: red">*</span></label>
                             <select name="gioitinh" id="gioitinh" class="form-select">
-                                <option value="">Chọn giới tính</option>
+                                <!-- <option value="">Chọn giới tính</option> -->
                                 <option value="Nam" <?php echo (old('gioitinh', $old) == 'Nam') ? 'selected' : ''; ?>>Nam</option>
                                 <option value="Nữ" <?php echo (old('gioitinh', $old) == 'Nữ') ? 'selected' : ''; ?>>Nữ</option>
                             </select>
@@ -195,7 +195,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Phòng đang ở <span style="color: red">*</span></label>
                             <select name="room_id" id="" class="form-select">
-                                <option value="">Chọn phòng</option>
+                                <!-- <option value="">Chọn phòng</option> -->
                                 <?php
                                     if(!empty($allRoom)) {
                                         foreach($allRoom as $item) {
@@ -217,8 +217,8 @@ layout('navbar', 'admin', $data);
                     </div>                  
                     <div class="from-group">                    
                             <div class="btn-row">
-                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('tenant') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i></a>
-                                <button type="submit" class="btn btn-secondary btn-sm"><i class="fa fa-plus"></i> Cập nhật</button>
+                            <a style="margin-right: 20px " href="<?php echo getLinkAdmin('tenant') ?>" class="btn btn-secondary"><i class="fa fa-arrow-circle-left"></i> Quay lại</a>
+                                <button type="submit" class="btn btn-secondary"><i class="fa fa-edit"></i> Cập nhật</button>
                             </div>
                     </div>
             </form>

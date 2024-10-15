@@ -152,7 +152,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Ngày lập hóa đơn</label>
                             <select name="ngaylaphd" id="" class="form-select">
-                                <option value="">Chọn ngày</option>
+                           <!-- <option value="">Chọn ngày</option> -->
                                 <?php
                                     for($i=1; $i <= 31; $i++) { 
                                         $selected = ($i == $roomDetail['ngaylaphd']) ? "selected" : "";
@@ -166,7 +166,7 @@ layout('navbar', 'admin', $data);
                         <div class="form-group">
                             <label for="">Chu kỳ thu tiền</label>
                             <select name="chuky" id="" class="form-select">
-                                <option value="">Chọn chu kỳ</option>
+                                <!--<option value="">Chọn chu kỳ</option>-->
                                 <?php 
                                     for($i = 1; $i < 7; $i+=2) { 
                                         $selectChuky = ($i == $roomDetail['chuky']) ? 'selected' : "";

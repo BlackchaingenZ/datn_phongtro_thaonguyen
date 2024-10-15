@@ -74,15 +74,15 @@ $old = getFlashData('old');
                         <th width="3%" rowspan="2"></th>
                         <th rowspan="2">Tên phòng</th>
                         <th colspan="3">Tiền phòng</th>
-                        <th colspan="3">Tiền điện (1.700đ)</th>
-                        <th colspan="3">Tiền nước (20.000đ)</th>
-                        <th colspan="2">Tiền rác (10.000đ)</th>
-                        <th colspan="2">Tiền Wifi (50.000đ)</th>
+                        <th colspan="3">Tiền điện</th>
+                        <th colspan="3">Tiền nước</th>
+                        <th colspan="2">Tiền rác</th>
+                        <th colspan="2">Tiền Wifi</th>
                         <th width="3%" rowspan="2">Cộng thêm</th>
                         <th rowspan="2">Tổng cộng</th>
                         <th rowspan="2">Còn nợ</th>
                         <th rowspan="2">Ngày lập</th>
-                        <th rowspan="2">Trạng thái</th>
+                        <th width="7%" rowspan="2">Trạng thái</th>
                     </tr>
                     <tr>
                         <th width="3%">Số tháng</th>

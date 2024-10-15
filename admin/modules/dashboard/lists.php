@@ -274,7 +274,7 @@ if($userDetail['group_id'] == 7) {
         </div>
         <?php
     } else {
-        echo '<img style="width: 70%" src="https://www.course.io.vn/templates/client/assets/img/not-found.jpg" />';
+        echo '<img style="width: 70%" src="https://i.pinimg.com/564x/7d/dc/51/7ddc51549b1d53cb4ffe482f872e4c11.jpg" />';
     }
 }
 
