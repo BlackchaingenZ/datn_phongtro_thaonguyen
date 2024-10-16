@@ -99,6 +99,32 @@
             <p class="menu__item-title">Lịch sử hợp đồng</p>
           </div>
         </a>
+
+                <!-- Item 10 -->
+                <a href="<?php echo getLinkAdmin('sum'); ?>" class="link__menu ">
+          <div class="menu__item">
+            <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/report.png" class="menu__item-image" alt="">
+            <p class="menu__item-title">Báo cáo tổng hợp</p>
+          </div>
+        </a>
+
+                <!-- Item 11 -->
+                <a href="<?php echo getLinkAdmin(''); ?>" class="link__menu ">
+          <div class="menu__item">
+            <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/equipment.png" class="menu__item-image" alt="">
+            <p class="menu__item-title">Quản lý cơ sở vật chất</p>
+          </div>
+        </a>
+
+                        <!-- Item 12 -->
+                        <a href="<?php echo getLinkAdmin(''); ?>" class="link__menu ">
+          <div class="menu__item">
+            <img src="<?php echo _WEB_HOST_ADMIN_TEMPLATE; ?>/assets/img/value.png" class="menu__item-image" alt="">
+            <p class="menu__item-title">Bảng giá phòng</p>
+          </div>
+        </a>
+        
+
       </div>
     </div>
   </section>

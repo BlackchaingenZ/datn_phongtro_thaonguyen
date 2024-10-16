@@ -179,10 +179,20 @@ th {
 .menu__list {
     padding: 2px 0;
     display: flex;
-    justify-content: space-between;
-    /* gap: 20px; */
-    overflow-x:auto;
+    justify-content: space-evenly; /* Chia đều khoảng cách giữa các phần tử */
+    flex-wrap: wrap;
+    row-gap: 20px;
+    overflow-x: hidden;
 }
+
+
+.menu__list-item {
+    flex-basis: calc(25% - 20px); /* Kích thước cơ bản là 25% */
+    flex-grow: 1; /* Cho phép mục mở rộng ra để lấp đầy không gian trống */
+    margin-bottom: 10px;
+}
+
+
 
 .min {
     font-weight: bold;
