@@ -77,5 +77,3 @@ const _DRIVER = 'mysql';
 
 define('_WEB_HOST_ROOT', 'https://'.$_SERVER['HTTP_HOST']); //Địa chỉ trang chủ
 
-twgo sref qhwk qyyy - mới (thu86065)
-lahzlzenxkvntgso (daothu3107)
